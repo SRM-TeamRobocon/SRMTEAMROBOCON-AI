@@ -1,5 +1,8 @@
 import nltk
 from nltk.tokenize import sent_tokenize
+from ingestion.cleaner import clean_text
+from ingestion.pdf_loader import extract_pdf_text
+
 
 # Run once if punkt not downloaded
 #nltk.download('punkt')
@@ -53,18 +56,18 @@ def trim_front_matter(text: str) -> str:
         print("Warning: 'Introduction' not found in text. Returning original text.")
         return text
 
-# # Testing
-# if __name__ == "__main__":
-#     from cleaner import clean_text
-#     from pdf_loader import extract_pdf_text
+# Testing
+if __name__ == "__main__":
+    from cleaner import clean_text
+    from pdf_loader import extract_pdf_text
 
-#     raw_text = extract_pdf_text("../data/raw/jain.pdf")
-#     trimmed = trim_front_matter(raw_text)
-#     cleaned = clean_text(trimmed)
-#     chunks = chunk_text(cleaned)
+    raw_text = extract_pdf_text("../data/raw/jain.pdf")
+    trimmed = trim_front_matter(raw_text)
+    cleaned = clean_text(trimmed)
+    chunks = chunk_text(cleaned)
 
-#     print(len(chunks))
-#     print('\n')
-#     print(chunks[0])
-#     print('\n')
-#     print(chunks[1])
+    print(len(chunks))
+    print('\n')
+    print(chunks[0])
+    print('\n')
+    print(chunks[1])
