@@ -1,7 +1,7 @@
 def generate_prompt(context_chunks: list, user_question: str) -> str:
     context = "\n\n".join(context_chunks)
     prompt = f"""
-    You are a Jain knowledge assistant.
+    You are a knowledge assistant.
 
     Answer ONLY using the provided context.
 
