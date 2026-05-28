@@ -59,7 +59,7 @@ if __name__ == "__main__":
         
     model = load_model()
 
-    raw = extract_pdf_text("data/raw/srm.pdf")
+    raw = extract_pdf_text("backend/data/raw/jain.pdf")
     cleaned = clean_text(raw)
     chunks = chunk_text(cleaned)
 
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     store_chunks(chunks, embeddings)
 
-    query = embed_query(model, "What is btech credit system?")
-    results = search(query)
+    # query = embed_query(model, "What is btech credit system?")
+    # results = search(query)
 
-    print(results)
+    # print(results)

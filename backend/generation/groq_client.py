@@ -34,4 +34,4 @@ def generate_response(prompt: str) -> str:
 
 
 if __name__ == "__main__":
-    print(generate_response("Say hello in one short sentence."))
+    print(generate_response("when was mahavira born?"))
