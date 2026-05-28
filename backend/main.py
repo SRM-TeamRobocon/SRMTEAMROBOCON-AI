@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
+from backend.embeddings.embedder import load_model
 from backend.services.full_flow import full_flow
 
 app = FastAPI()
-
+model = load_model()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
